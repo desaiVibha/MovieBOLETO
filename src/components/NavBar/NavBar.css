@@ -1,0 +1,25 @@
+.edit-color{
+    background-color: cadetblue;
+}
+.navbar-background{
+    background-image: url(https://img.freepik.com/free-vector/blue-polygonal-shapes-background_1053-434.jpg?size=626&ext=jpg&ga=GA1.1.888210394.1695361414&semt=ais);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.navbar-left{
+    background-image: url(https://img.freepik.com/free-vector/blue-polygonal-shapes-background_1053-434.jpg?size=626&ext=jpg&ga=GA1.1.888210394.1695361414&semt=ais);
+
+}
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+.dropdown-options {
+    display: none;
+    position: absolute;
+    overflow: auto;
+}  
+.dropdown:hover .dropdown-options {
+    display: block;
+}

@@ -1,0 +1,53 @@
+.login-complete{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center; 
+    /* margin-top: 50px; */
+    /* margin-left: 500px; */
+    /* width:400px; */
+    height:100vh;
+    border: 2px solid lightgray;
+    background-image: url(https://img.freepik.com/free-vector/red-movie-theater-seats-with-curtains-background_1017-38388.jpg);
+    background-repeat: repeat-x repeat-y;
+}
+.input-format{
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    margin-top: 20px;
+      
+}
+.email-format{
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+.pass-format{
+    margin-top: 15px;
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+.para{
+    text-align: center;
+    margin-top: 25px;
+}
+.login-btn{
+    margin-left: 22px;
+    width:220px;
+    background-color: blue;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+.title-login{
+    margin-top: 20px;
+}
+.here{
+    cursor: pointer;
+    text-decoration-line: underline;
+    text-decoration-color: red;
+    text-decoration-thickness: 2px;
+}

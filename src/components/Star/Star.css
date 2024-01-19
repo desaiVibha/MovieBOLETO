@@ -1,0 +1,13 @@
+.ratingdiv{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 15px;
+}
+.review{
+    margin-left: 10px;
+    font-weight: bold;
+}
+.ratingstar{
+    color:orangered;
+}

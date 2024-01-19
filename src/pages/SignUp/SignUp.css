@@ -1,0 +1,68 @@
+.signup-complete{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:flex-start; 
+    margin-top: 10px;
+    /* margin-left: 500px; */
+    /* width:400px; */
+    height: 100vh;
+    border: 2px solid lightgray;
+    background-image: url(https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2luZW1hfGVufDB8fDB8fHww);
+}
+.here-su{
+    cursor: pointer;
+    text-decoration-line: underline;
+    text-decoration-color: red;
+    text-decoration-thickness: 2px;
+}
+.fname-format-signup{
+    margin-top: 25px;
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+.lname-format-signup{
+    margin-top: 25px;
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+.mobile-format{
+    margin-top: 25px;
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+.input-format-signup{
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    margin-top: 25px;
+}
+.email-format-signup{
+    margin-top: 25px;
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+.pass-format-signup{
+    margin-top: 25px;
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+.paraSign{
+    text-align: center;
+    margin-top: 25px;
+    color: aliceblue;
+}
+.signup-btn{
+    margin-left: 17px;
+    width:220px;
+    background-color: blue;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+.title-signup{
+    /* margin-top: 20px; */
+    color: red;
+}

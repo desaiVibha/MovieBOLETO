@@ -1,0 +1,43 @@
+.table-format{
+    margin: 50px 0px 0px 0px;
+    background-image: url(https://img.freepik.com/free-vector/blue-polygonal-shapes-background_1053-434.jpg?size=626&ext=jpg&ga=GA1.1.888210394.1695361414&semt=ais);
+}
+table{
+    width:100%;
+    
+}
+.total-format{
+    background-image: url(https://img.freepik.com/free-vector/blue-polygonal-shapes-background_1053-434.jpg?size=626&ext=jpg&ga=GA1.1.888210394.1695361414&semt=ais);;
+}
+th, td {
+    border-bottom: 1px solid #ddd;
+  }
+
+th,td{
+    padding: 25px;
+}
+th {
+    background-color: rgb(74, 134, 134);
+    color: white;
+  }
+  
+tr:nth-child(even) 
+{
+    background-color:#f2f2f2;
+}
+
+tr:hover {background-color: coral;}
+
+.ticket-plan-text{
+    margin-top: 80px;
+    text-decoration: underline;
+    color: coral;
+}
+
+.stylingbackBtn{
+    background-color: cyan;
+    border-radius: 20px;
+    border: 2px solid ;
+    width: 100px;
+    font-size: large;
+}
