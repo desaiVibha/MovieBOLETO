@@ -82,27 +82,27 @@ function SignUp() {
                             <div>
                                 <Field id='name' className='fname-format-signup' type="text" name="name" placeholder='Name'></Field>
                             </div>
-                            <ErrorMessage name='name' />
+                            <div className='error' ><ErrorMessage name='name' /></div>
 
                             <div>
                                 <Field id='email' className='email-format-signup' type="email" name="email" placeholder='E-mail'></Field>
                             </div>
-                            <ErrorMessage name='email' />
+                            <div className='error' ><ErrorMessage className='error' name='email' /></div>
 
                             <div>
                                 <Field id='password' className='pass-format-signup' type="password" name="password" placeholder='Password'></Field>
                             </div>
-                            <ErrorMessage name='password' />
+                            <div className='error' ><ErrorMessage className='error' name='password' /></div>
 
                             <div>
                                 <Field id='username' className='lname-format-signup' type="text" name="username" placeholder='Username'></Field>
                             </div>
-                            <ErrorMessage name='username' />
+                            <div className='error' ><ErrorMessage className='error' name='username' /></div>
 
                             <div>
                                 <Field id='mobileNumber' className='mobile-format' type="number" name="mobileNumber" placeholder='Mobile Number'></Field>
                             </div>
-                            <ErrorMessage name='mobileNumber' />
+                            <div className='error' ><ErrorMessage className='error' name='mobileNumber' /></div>
 
                         </div>
 

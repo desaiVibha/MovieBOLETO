@@ -7,6 +7,7 @@ import React from "react";
 import {BrowserRouter,Routes,Route} from "react-router-dom"; 
 import TicketPlan from './pages/TicketPlan/TicketPlan';
 import SeatSelection from './pages/SeatSelection/SeatSelection';
+import BookingSummary from './pages/BookingSummary/BookingSummary';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route exact path="/moviedetail" element={<MovieDetail/>}/> 
         <Route exact path="/ticketplan" element={<TicketPlan/>}/> 
         <Route exact path="/seatselection" element={<SeatSelection/>}/> 
+        <Route exact path="/bookingsummary" element={<BookingSummary/>}/>
       </Routes> 
       </BrowserRouter> 
       </>   

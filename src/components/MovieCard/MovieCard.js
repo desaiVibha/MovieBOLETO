@@ -9,6 +9,7 @@ function MovieCard({para,info }){
     let token = localStorage.getItem('access');
     function takeToDetailApi(m_id){        
         //const params = useParams()
+        if(info){
         fetch('http://127.0.0.1:8000/movie/movieDetails/'+m_id, {
             method: "GET",
             headers: { 'Authorization': 'Bearer ' + token }
@@ -26,7 +27,11 @@ function MovieCard({para,info }){
                     navigate('/moviedetail', {state:parsedRes})
                 }
                 
-            })    
+            })}
+        else{
+            alert('Please login first to see the details');
+            
+        }    
     }
     return(
         <div>

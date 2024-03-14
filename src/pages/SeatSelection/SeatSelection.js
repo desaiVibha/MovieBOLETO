@@ -1,9 +1,10 @@
 import './SeatSelection.css';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { State } from 'state-pool';
 
 function SeatSelection() {
-    let token=localStorage.getItem('access');
+    let token = localStorage.getItem('access');
     const location = useLocation();
     const data = location.state;
     console.log(data);
@@ -58,35 +59,53 @@ function SeatSelection() {
             setSeats(seats.filter((item) =>
                 item !== val.target.innerText))
         }
-        
+
     }
-    console.log(seats);
-    
+    //console.log(seats);
+
 
     const proceedToPay = () => {
-        console.log("Payment");
+        console.log(seats);
+        let finalUpdatedSeats=[];
         seats.map((each) => {
             const element = document.getElementById(each);
             element.classList.add("occupied");
+            finalUpdatedSeats.push(each);
         })
+        seatsindatabase.map((s)=>{
+            finalUpdatedSeats.push(s);
+
+        })
+        console.log(finalUpdatedSeats);
 
         fetch('http://127.0.0.1:8000/movie/addbookedseats/', {
             method: 'POST',
             body: JSON.stringify({
-                "seat_no": seats,
+                "seat_no": finalUpdatedSeats,
                 "theatre_name": data[0],
                 "movie_id": data[1]
             }),
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
-                'Authorization': 'Bearer ' + token 
+                'Authorization': 'Bearer ' + token
             }
-          
+
         })
             .then((res) => res.json())
             .then((parsedRes) => {
                 console.log(parsedRes.theatres);
+                fetch('http://127.0.0.1:8000/movie/movieDetails/' + data[1], {
+                    method: "GET",
+                    headers: { 'Authorization': 'Bearer ' + token }
+                })
+                    .then((res) => res.json())
+                    .then((dta) => {
+                        let movieDetails = [dta.name, dta.image, data[0], data[3], seats];
+                        navigate('/bookingsummary', { state: movieDetails });
+
+                    })
             })
+
     }
 
     return (
@@ -103,6 +122,17 @@ function SeatSelection() {
                         <button className="btn btn-outline-primary my-2 my-sm-0 stylingbackBtn" onClick={() => navigate(-1)}><b>Back</b></button>
                     </div>
                 </nav>
+                <div>
+                    {data[2] && <form className="form-inline my-2 my-lg-0">
+                        <div class="dropdown">
+                            <button><b>Welcome {data[2]}!</b></button>
+                            <div class="dropdown-options">
+                                <a href="/" >Log Out</a>
+                            </div>
+                        </div>
+                    </form>}
+                    {/* <button className="btn btn-outline-success my-2 my-sm-0" onClick={() => navigate("/signup")}><b>Join Us</b></button> */}
+                </div>
             </nav>
             <div className='seatselectionpage'>
                 <ul className="showcase">
@@ -188,9 +218,9 @@ function SeatSelection() {
                     </div>
                 </div>
                 <p class="text">
-                    You have selected <span id="count">{seats.length}</span> seats for a price of Rs. <span id="total">{seats.length*price}</span>
+                    You have selected <span id="count">{seats.length}</span> seats for a price of Rs. <span id="total">{seats.length * price}</span>
                 </p>
-                <button onClick={() => proceedToPay()}>Proceed to Pay</button>
+                <button onClick={() => proceedToPay()}>Confirm Seats</button>
             </div>
         </div>
     )

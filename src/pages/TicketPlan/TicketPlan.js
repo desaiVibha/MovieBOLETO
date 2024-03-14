@@ -22,8 +22,15 @@ function TicketPlan() {
         })
     }, [])
     function getAllDetailsToSeatSelection(datas) {
-        console.log(datas.target.textContent);
-        let datasend = [datas.target.textContent, data.movie_id];
+        console.log(datas);
+        let timing;
+        values.map((value)=>{
+            if (value.theatre_name===datas.target.textContent){
+                timing=value.timing
+
+            }
+        })
+        let datasend = [datas.target.textContent, data.movie_id, data.username,timing];
         navigate('/seatselection', { state: datasend });
     }
     return (
@@ -37,6 +44,17 @@ function TicketPlan() {
                         <b>BOLETO</b>
                     </a>
                 </nav>
+                <div>
+                    {data.username && <form className="form-inline my-2 my-lg-0">
+                        <div class="dropdown">
+                            <button><b>Welcome {data.username}!</b></button>
+                            <div class="dropdown-options">
+                                <a href="/" >Log Out</a>
+                            </div>
+                        </div>                        
+                        </form>}
+                        {/* <button className="btn btn-outline-success my-2 my-sm-0" onClick={() => navigate("/signup")}><b>Join Us</b></button> */}
+                </div>
             </nav>
             {values &&
                 <div className='total-format'>
