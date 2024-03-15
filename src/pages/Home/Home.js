@@ -12,7 +12,7 @@ function Home(){
     //console.log(filtermovielist);
     const handleDatafromTophome=(item)=>{
         //console.log(item.moviesearch);
-        fetch('http://127.0.0.1:8000/movie/moviefilter/?movie='+item.moviesearch +'&city='+item.city)
+        fetch('http://127.0.0.1:8000/movie/moviefilter/?movie='+item.moviesearch +'&city='+item.city +'&lang='+item.lang)
             .then((res) => res.json())
             .then((d) => {
                 setFiltermovielist(()=>d);

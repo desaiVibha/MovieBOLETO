@@ -100,7 +100,7 @@ function SeatSelection() {
                 })
                     .then((res) => res.json())
                     .then((dta) => {
-                        let movieDetails = [dta.name, dta.image, data[0], data[3], seats];
+                        let movieDetails = [dta.name, dta.image, data[0], data[3], seats,data[2]];
                         navigate('/bookingsummary', { state: movieDetails });
 
                     })

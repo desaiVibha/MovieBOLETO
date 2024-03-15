@@ -3,6 +3,7 @@ import './TopHome.css'
 import { useState } from "react"
 function TopHome({val,handleDatafromTophome}) {
     const [city,setCity]=useState('Bangalore');
+    const [lang,setLang]=useState('English');
     const [moviesearch,setMoviesearch] = useState('');
     // console.log(city);
     // console.log(moviesearch);
@@ -30,8 +31,16 @@ function TopHome({val,handleDatafromTophome}) {
                                 <option value="chennai">Chennai</option>
                             </select>
                         </div>
+                        <div>
+                            <label for="lang">Choose language:</label>
+                            <select name="lang" id="lang" onChange={event=>setLang(event.target.value)} defaultValue={lang}>
+                                <option value="english">English</option>
+                                <option value="kannada">Kannada</option>
+                                <option value="hindi">Hindi</option>
+                            </select>
+                        </div>
                         <div className='date-select'>
-                            <button className="btn btn-outline-success my-2 my-sm-0" onClick={()=>{obj['moviesearch']=moviesearch;obj['city']=city;
+                            <button className="btn btn-outline-success my-2 my-sm-0" onClick={()=>{obj['moviesearch']=moviesearch;obj['city']=city;obj['lang']=lang;
         handleDatafromTophome(obj)}}>
                             <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                                 <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />

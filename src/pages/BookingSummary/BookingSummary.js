@@ -3,6 +3,7 @@ import './BookingSummary.css';
 function BookingSummary(){
     const location = useLocation();
     const data = location.state;
+    console.log(data);
     let navigate = useNavigate();
     return(
         <div className='format-summary'>
@@ -14,7 +15,7 @@ function BookingSummary(){
                         </div>
                         <div className="col-md-2 write-up">
                             <div className="card-body">
-                                <h5 className="card-text welcome">Congratulations! Enjoy the movie "{data[0]}"</h5>
+                                <h5 className="card-text welcome">Congratulations {data[5]}! Enjoy the movie "{data[0]}"</h5>
                                 <div ><p className="card-text tnme">Theatre Name:{data[2]}</p></div>
                                 <div ><p className="card-text timing">Timing:{data[3]}</p></div>
                                 <div ><p className="card-text seats">Selected Seats:{data[4]}</p></div>
